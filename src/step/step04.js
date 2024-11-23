@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Routes, useParams } from 'react-router-dom';
+import { Link, Route, Routes, useParams } from 'react-router-dom';
 
 const UserDetail = () => {
     const { id } = useParams(); // URL파라미터에서 id 값 추출
@@ -13,7 +13,11 @@ const Step04 = () => {
     <>
         <nav>
             <ul className='flex gap-4 bg-red-200 p-4'>
-                {}
+                {userId.map((v)=>(
+                    <li key={v}>
+                        <Link to={`/users/${v}`}>{v}번 유저</Link>
+                    </li>
+                ))}
             </ul>
         </nav>
         <div className='bg-slate-200 p-4'>공통영역</div>
