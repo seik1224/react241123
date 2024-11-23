@@ -34,14 +34,13 @@ const Step02 = () => {
             }
         }}
         // 슬라이드 변경 완료 시
-        onSlideChangeTransitionEnd={(swiper)=>{
-            console.log(swiper);
-            console.log(`현재슬라이드 : ${swiper.activeIndex + 1}`);
-            const currentSlide = swiper.slides[swiper.activeIndex];
-            console.log(currentSlide)
-            if(currentSlide === 2){
-                currentSlide.style.backgroundColor = 'yellow';
-            }
+        onSlideChangeTransitionEnd={(swiper) => {
+          console.log(swiper);
+          console.log(`현재 슬라이드 : ${swiper.activeIndex + 1}`);
+          const currentSlide = swiper.slides[swiper.activeIndex];
+          if (swiper.activeIndex === 2) {
+            currentSlide.style.backgroundColor = "yellow";
+          }
         }}
       >
         <SwiperSlide>Slide 1</SwiperSlide>
