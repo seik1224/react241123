@@ -18,5 +18,24 @@ https://tailwindcss.com/docs/guides/create-react-app
 ## 2. Swiper
 
 설치 :: npm i swiper
-
 https://swiperjs.com/demos
+
+---
+
+## 3. react-router-dom
+
+설치 :: npm i react-router-dom
+
+- 새로고침 없이 페이지 이동하는 라이브러리
+
+1. 꼭 index.js에 BrowserRouter 작성
+    <BrowserRouter>
+
+2. 라우팅 설정은 App.js에 작성
+    <Routes>안에 라우트 작성
+
+3. 라우트 태그 사용
+    <Route path="/" element={<Home />}>
+
+4. Link 태그 사용
+    <Link to="/">Home</Link>

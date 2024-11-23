@@ -14,7 +14,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 const Step02 = () => {
   return (
     <>
-        <Swiper
+      <Swiper
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
@@ -24,6 +24,25 @@ const Step02 = () => {
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
+        // 슬라이드 변경 시작 시
+        onSlideChangeTransitionStart={(swiper)=>{
+            // console.log(swiper);
+            // console.log(`현재슬라이드 : ${swiper.activeIndex + 1}`);
+            const currentSlide = swiper.slides[swiper.activeIndex];
+            if(swiper.activeIndex === 3){
+                currentSlide.style.backgroundColor = 'red';
+            }
+        }}
+        // 슬라이드 변경 완료 시
+        onSlideChangeTransitionEnd={(swiper)=>{
+            console.log(swiper);
+            console.log(`현재슬라이드 : ${swiper.activeIndex + 1}`);
+            const currentSlide = swiper.slides[swiper.activeIndex];
+            console.log(currentSlide)
+            if(currentSlide === 2){
+                currentSlide.style.backgroundColor = 'yellow';
+            }
+        }}
       >
         <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
