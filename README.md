@@ -51,3 +51,22 @@ https://swiperjs.com/demos
 
 2. 컴포넌트에서 파라미터 추출
     const { id } = useParams();
+
+---
+
+## 4. Recoil
+
+설치 :: npm i recoil
+
+1. 꼭 index.js에 RecoilRoot 작성
+
+2. atom 작성
+```bash
+    const textState = atom({
+        key : 'textState', // 고유한 키
+        default : '', // 기본값
+    });
+```
+
+3. 사용할 컴포넌트에서 useRecoilState사용
+    const [text, setText] = useRecoilState(textStat)
